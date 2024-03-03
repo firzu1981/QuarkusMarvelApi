@@ -2,6 +2,7 @@ package com.example;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 /**
@@ -23,10 +24,13 @@ import jakarta.persistence.Id;
  * }
  */
 @Entity
-public class MyEntity {
+class Comics {
     @Id
-    @GeneratedValue
-    public Long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    public Integer id;
 
-    public String field;
+    public String title;
+
+    public String description;
+
 }
